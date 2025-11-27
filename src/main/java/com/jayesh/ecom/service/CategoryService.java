@@ -1,18 +1,19 @@
 package com.jayesh.ecom.service;
 
-import com.jayesh.ecom.model.Category;
+import com.jayesh.ecom.payload.CategoryDTO;
+import com.jayesh.ecom.payload.CategoryResponse;
 
-import java.util.List;
+
 
 public interface CategoryService {
 
-    List<Category> getAllCategories();
+    CategoryResponse getAllCategories(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 
-    Category getCategoryById(Long categoryId);
+    CategoryDTO getCategoryById(Long categoryId);
 
-    void addCategory(Category category);
+    CategoryDTO addCategory(CategoryDTO category);
 
-    void deleteCategory(Long categoryId);
+    CategoryDTO deleteCategory(Long categoryId);
 
-    Category updateCategory(Long categoryId, Category category);
+    CategoryDTO updateCategory(Long categoryId, CategoryDTO category);
 }
