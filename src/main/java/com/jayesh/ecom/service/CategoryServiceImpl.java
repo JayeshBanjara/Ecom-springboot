@@ -31,8 +31,8 @@ public class CategoryServiceImpl implements CategoryService {
     ) {
 
         Sort sortByAndOrder = sortOrder.equalsIgnoreCase("asc")
-                ? Sort.by(Sort.Direction.ASC, "id")
-                : Sort.by(Sort.Direction.DESC, "id");
+                ? Sort.by(Sort.Direction.ASC, "categoryId")
+                : Sort.by(Sort.Direction.DESC, "categoryId");
 
         Pageable pageDetails = PageRequest.of(pageNumber-1, pageSize,  sortByAndOrder);
         Page<Category> categoryPage = categoryRepository.findAll(pageDetails);
