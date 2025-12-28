@@ -1,5 +1,7 @@
 package com.jayesh.ecom.payload;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,5 +12,8 @@ import lombok.NoArgsConstructor;
 public class CategoryDTO {
 
     private Long categoryId;
+
+    @NotBlank
+    @Size(min = 3, max = 50, message = "Category name must be of at-least 3 characters.")
     private String categoryName;
 }
